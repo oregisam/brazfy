@@ -1,0 +1,4 @@
+.auth-wrapper{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#ecece7}
+.auth-card{background:#fff;padding:48px 60px;border-radius:28px;box-shadow:0 0 0 2px #eaeaea,6px 6px 0 -2px #d3d3d3;max-width:420px;text-align:center;font-family:'Helvetica Neue',Arial}
+.auth-card h2{margin:0 0 20px;font-size:2rem}.brand{color:#2b6e2d}
+.auth-card p{color:#555;margin-bottom:32px}.auth-card small{display:block;margin-top:28px;color:#666}

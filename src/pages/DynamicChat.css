@@ -1,0 +1,130 @@
+/* src/pages/DynamicChat.css */
+
+/* Container principal do chat */
+.chat-window-dynamic {
+  width: 100%;
+  max-width: 400px;
+  height: 300px; /* Altura ajustada */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background: #e5ddd5;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Cabeçalho do chat */
+.chat-header {
+  background: #075e54;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.back-arrow {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.chat-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Área de mensagens: alinhada ao final e sem scrollbar visível */
+.chat-messages-dynamic {
+  flex: 1;
+  padding: 5px 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+/* Ocultar a scrollbar para WebKit e Firefox */
+.chat-messages-dynamic::-webkit-scrollbar {
+  display: none;
+}
+.chat-messages-dynamic {
+  scrollbar-width: none;
+}
+
+/* Estilo dos balões de mensagem */
+.chat-message {
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  color: #333;
+  animation: slideInFromBottom 0.4s ease-out;
+  position: relative;
+  text-align: left;
+}
+
+/* O texto da mensagem fica alinhado à esquerda */
+.message-text p {
+  margin: 0;
+}
+
+/* Hora exibida no canto inferior direito */
+.message-time {
+  font-size: 0.75rem;
+  color: #999;
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+}
+
+/* Animação para entrada das mensagens */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rodapé do chat */
+.chat-footer-dynamic {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: #f0f0f0;
+}
+
+.chat-footer-dynamic input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.chat-footer-dynamic input:focus {
+  outline: none;
+}
+
+.audio-button, .send-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.audio-button {
+  color: #075e54;
+}
+
+.send-button {
+  color: #25D366;
+}
+

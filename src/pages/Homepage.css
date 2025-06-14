@@ -1,0 +1,543 @@
+/* =========================
+   Reset e scroll suave
+========================= */
+html, body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* ou outra fonte */
+}
+
+/* --- Novo header slim --- */
+/* .promo-header {
+  width: 100%;
+  background: transparent;
+  margin-bottom: 0;          / cola no hero /
+} */
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.brand span { color: #000; }
+
+.login-btn {
+  background: transparent;
+  border: 2px solid #000;
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.login-btn:hover { background:#f2f2f2; }
+
+/* =========================
+   Estrutura Principal
+========================= */
+.homepage {
+  overflow-y: auto; /* scroll normal */
+  min-height: 100vh;
+}
+
+/* Cada seção tem padding vertical para espaçamento
+   e compensar o header fixo. Ajuste conforme seu design. */
+section {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+/* spacing tighter on very large monitors */
+@media (min-width: 1440px) {
+  section {
+    padding-top: 55px;
+    padding-bottom: 35px;
+  }
+}
+
+/* Container padrão */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   Header Fixo
+========================= */
+.homepage-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #25D366;
+}
+
+/* A navegação terá um display flex e gap para espaçar os links */
+.navigation {
+  display: none;
+  gap: 20px; /* Espaçamento entre cada link */
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: #25D366;
+}
+
+/* =========================
+   Seção Hero
+========================= */
+.hero {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container do hero */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 500px;
+  padding: 20px;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #333;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #555;
+  text-align: left;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.cta-primary {
+  background-color: #25D366;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.cta-primary:hover {
+  background-color: #1ebc5b;
+}
+
+.cta-secondary {
+  background-color: transparent;
+  border: 2px solid #25D366;
+  color: #25D366;
+  padding: 13px 28px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.cta-secondary:hover {
+  background-color: #25D366;
+  color: #fff;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Seção Sobre
+========================= */
+.about {
+  background: #fff;
+  text-align: center;
+}
+
+.about-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #25D366;
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.step-card {
+  flex: 1 1 220px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-card h3 {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  color: #25D366;
+}
+
+.step-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* =========================
+   Seção Recursos
+========================= */
+.features {
+  background: #f9f9f9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.feature-item {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 40px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #25D366;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.features-cta {
+  margin-top: 20px;
+}
+
+.features-cta .cta-primary {
+  padding: 12px 25px;
+}
+
+/* =========================
+   Seção Preço
+========================= */
+.pricing {
+  background: #fff;
+  text-align: center;
+}
+
+.pricing-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #25D366;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.pricing-card {
+  flex: 1 1 300px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 40px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+  color: #25D366;
+}
+
+.pricing-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.pricing-cta {
+  margin-top: 20px;
+}
+
+.pricing-cta .cta-primary {
+  padding: 12px 25px;
+}
+
+/* =========================
+   Seção Contato
+========================= */
+.contact {
+  background: #fff;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-card {
+  background: #f9f9f9;
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-card h2 {
+  font-size: 2rem;
+  color: #25D366;
+  margin: 0;
+}
+
+.contact-card p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0 0 15px 0;
+}
+
+.contact-button {
+  background-color: #25D366;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #1ebc5b;
+}
+
+/* =========================
+   Rodapé
+========================= */
+.homepage-footer {
+  background: #222;
+  color: #aaa;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Classe .thin-bold
+========================= */
+.thin-bold {
+  font-weight: 500;
+  color: #000;
+}
+
+/* =========================
+   Media Queries
+========================= */
+@media (max-width: 768px) {
+  /* Header no mobile */
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navigation {
+    flex-wrap: wrap; /* se quiser que os links quebrem linha */
+    gap: 10px;
+  }
+
+  /* Hero no mobile */
+  .hero-container {
+    flex-direction: column;
+  }
+  section {
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+  .hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  .hero-image {
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* Seção Sobre */
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .step-card {
+    max-width: 340px;
+  }
+
+  /* Seção Recursos e Preço */
+  .features-container,
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-item,
+  .pricing-card {
+    max-width: 340px;
+  }
+
+  /* Seção Contato */
+  .contact-card {
+    text-align: center;
+  }
+  .contact-card p {
+    margin-bottom: 15px;
+  }
+
+  .header-content {
+    padding: 10px 16px;
+  }
+  .login-btn { font-size:.9rem; padding:6px 18px; }
+}
+
+
+/* Chat mobile: escondido desktop */
+.mobile-chat { display: none; }
+
+@media (max-width: 768px) {
+  .mobile-chat { 
+    display: block;          /* mostra */
+    margin: 20px 0; 
+    text-align: center;
+  }
+  .mobile-chat .chat-window-dynamic{
+    width: 100%;
+    max-width: 360px;        /* evita estourar */
+    margin: 0 auto;
+  }
+  .hero-image {              /* esconde o chat da direita */
+    display: none;
+  }
+}
+
+/* Hero bloco mais colado ao próximo */
+.hero { padding-bottom: 20px !important; }
+
+/* Alinha logo + botão dentro da hero */
+ .hero-header {
+  width: 100%;
+  max-width: 480px;          /* segue largura do chat */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -10px 0 12px;      /* sobe apenas 10 px */
+}
+
+/* empurra o botão até a borda do chat (sem deslocar no mobile) */
+.hero-header .login-btn {
+  margin-left: auto;
+}
+
+.hero-header .brand {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.google-wrapper {
+  margin-top: 24px;
+}
